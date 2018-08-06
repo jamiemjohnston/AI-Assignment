@@ -1,0 +1,53 @@
+import matplotlib.pylot as plt
+import random as rand
+import os
+
+#read the instancedata given a file name. Returns n = no. of items,
+#c = capacity, vs = list of item values, ws = list of item weights
+
+def read_kfile(fname):
+	with open(fname, 'rU') as kfile:
+		lines = kfile.readlines()			#reads the whole file
+	n = int(line[0])					#1st line = number of items
+	c = int(lines[n+1])					#last line capacity, convert to int
+	vs = []
+	ws = []
+	lines = lines[1:n+1]					#removes first and last line to read items
+	for l in lines:
+		numbers = l.split()				#converts the string into a list
+		vs.append(int(numbers[1]))			#appends value, need to convert to int
+		ws.append(int(numbers[2]]))			#appends weight, need to convert to int
+	return n, c, vs, ws
+	
+#get the directory where the file is located
+dir_path = os.path.dirname(os.path.realpath(__file__))
+os.chdir(dir_path)						#change the working directory sio we can read the file
+
+knapfile= 'knap20.txt'
+nitems, cap, values, weights = read_kfile(knpafile)
+
+
+
+pltplot(values, weights, 'gd')
+plt.xlabel('Weights:')
+plt.ylabel('Values:')
+plt.figure()
+plt.show()
+
+def random_sol(n):
+	
+
+
+
+def evaluate(sol):
+
+
+
+
+
+def random_search(tries):
+	
+
+
+	
+
